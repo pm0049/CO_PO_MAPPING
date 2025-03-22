@@ -1,18 +1,18 @@
-# CO-PO Mapping
+# CO-PO Mapping 📚
 
-## Overview
+## Overview 🌍
 CO-PO Mapping is a systematic approach used in Outcome-Based Education (OBE) to establish a correlation between Course Outcomes (COs) and Program Outcomes (POs). This process ensures that the learning objectives of a course align with the broader goals of a program, facilitating measurable and structured learning outcomes.
 
 ---
 
-## Key Terminologies
+## Key Terminologies 📝
 - **Course Outcomes (CO):** Specific and measurable statements describing what students will learn by completing a course.
 - **Program Outcomes (PO):** Broad competencies that students are expected to achieve by the end of a program.
 - **Rubric Range:** A scoring guide used for evaluating the quality of student responses, aiding in CO attainment calculations.
 
 ---
 
-## Features
+## Features ✨
 1. **Mapping Process:**
    - Faculty members map each CO to relevant POs using evaluators.
    - Evaluators measure the strength of the correlation on a scale (e.g., Low - 1, Medium - 2, High - 3).
@@ -28,7 +28,7 @@ CO-PO Mapping is a systematic approach used in Outcome-Based Education (OBE) to 
 
 ---
 
-## Steps for CO-PO Mapping
+## Steps for CO-PO Mapping 🔄
 1. Navigate to the course file and access the "CO-PO Mapping" section.
 2. Select the appropriate evaluator for each CO-PO pair.
 3. If no correlation exists, leave the evaluator unselected.
@@ -37,7 +37,7 @@ CO-PO Mapping is a systematic approach used in Outcome-Based Education (OBE) to 
 
 ---
 
-## Example Mapping Table
+## Example Mapping Table 📊
 
 | CO       | PO1 | PO2 | PO3 | PO4 | PO5 | PO6 | PO7 | PO8 | PO9 | PO10 | PO11 | PO12 |
 |----------|------|------|------|------|------|------|------|------|------|-------|-------|-------|
@@ -47,7 +47,7 @@ CO-PO Mapping is a systematic approach used in Outcome-Based Education (OBE) to 
 
 ---
 
-## Benefits
+## Benefits 🌟
 - Aligns course-level learning with program-level goals.
 - Facilitates accreditation processes like NBA and ABET.
 - Enhances teaching strategies through measurable outcomes.
@@ -55,6 +55,11 @@ CO-PO Mapping is a systematic approach used in Outcome-Based Education (OBE) to 
 
 ---
 
-## Tools for Automation
+## Tools for Automation ⚙️
 Institutions can use software tools like OBE systems or ERP solutions to automate CO-PO mapping, enabling efficient report generation and data analysis.
+
+---
+
+## Contact Us 📞
+For any questions or support regarding CO-PO Mapping, please reach out to [support@example.com](mailto:support@example.com).
 
