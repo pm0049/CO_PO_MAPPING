@@ -56,7 +56,7 @@ CO-PO Mapping is a systematic approach used in Outcome-Based Education (OBE) to 
 ---
 
 ## Tools for Automation ⚙️
-Institutions can use software tools like OBE systems or ERP solutions to automate CO-PO mapping, enabling efficient report generation and data analysis.
+Institutions can use software tools like OBE systems or ERP solutions to automate CO-PO mapping, enabling efficient report generation .
 
 ---
 
