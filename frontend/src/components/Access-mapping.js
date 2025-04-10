@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
-import { useReactToPrint } from "react-to-print";
+// import { useReactToPrint } from "react-to-print";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const AccessMapping = () => {
   const subjects = [
@@ -8,6 +10,34 @@ const AccessMapping = () => {
     "Database Management System",
     "Operating Systems "
   ];
+
+  // pdf generation
+  const handleDownloadPDF = () => {
+    if (!selectedSubject) return;
+
+    const doc = new jsPDF();
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text(`CO-PO Mapping - ${selectedSubject}`, 14, 15);
+
+    const tableColumn = ["CO", "Description", ...poQuestions.map((_, index) => `PO${index + 1}`)];
+    const tableRows = coPoMapping[selectedSubject].map((coItem) => [
+      coItem.co,
+      coItem.description,
+      ...poQuestions.map((_, poIndex) => responses[`${coItem.co}-PO${poIndex + 1}`] || "-")
+    ]);
+
+    doc.autoTable({
+      head: [tableColumn],
+      body: tableRows,
+      startY: 25,
+      styles: { fontSize: 10 },
+      headStyles: { fillColor: [41, 128, 185] }, // Blue header
+      alternateRowStyles: { fillColor: [240, 240, 240] }
+    });
+
+    doc.save(`CO_PO_Mapping_${selectedSubject}.pdf`);
+  };
 
   // Mapping of COs for each subject
   const coPoMapping = {
@@ -106,32 +136,32 @@ const AccessMapping = () => {
   };
 
   // Calculate Average for each PO
-  const calculateAverages = () => {
-    let averages = Array(12).fill(0);
-    let counts = Array(12).fill(0);
+  // const calculateAverages = () => {
+  //   let averages = Array(12).fill(0);
+  //   let counts = Array(12).fill(0);
 
-    coPoMapping[selectedSubject].forEach((coItem) => {
-      poQuestions.forEach((_, poIndex) => {
-        let key = `${coItem.co}-PO${poIndex + 1}`;
-        if (responses[key]) {
-          averages[poIndex] += responses[key];
-          counts[poIndex]++;
-        }
-      });
-    });
+  //   coPoMapping[selectedSubject].forEach((coItem) => {
+  //     poQuestions.forEach((_, poIndex) => {
+  //       let key = `${coItem.co}-PO${poIndex + 1}`;
+  //       if (responses[key]) {
+  //         averages[poIndex] += responses[key];
+  //         counts[poIndex]++;
+  //       }
+  //     });
+  //   });
 
-    return averages.map((sum, index) => (counts[index] > 0 ? (sum / counts[index]).toFixed(2) : "-"));
-  };
+  //   return averages.map((sum, index) => (counts[index] > 0 ? (sum / counts[index]).toFixed(2) : "-"));
+  // };
 
   // Print Table Function
-  const handlePrint = useReactToPrint({
-    content: () => tableRef.current,
-    documentTitle: `Access_Mapping_${selectedSubject}`,
-  });
+  // const handlePrint = useReactToPrint({
+  //   content: () => tableRef.current,
+  //   documentTitle: `Access_Mapping_${selectedSubject}`,
+  // });
 
   return (
     <div className="container mt-4">
-      <h2>Access Mapping</h2>
+      <h2>Generate Mapping</h2>
 
       <h4>Select Subject</h4>
       <select className="form-select mb-4" onChange={handleSubjectChange}>
@@ -205,7 +235,7 @@ const AccessMapping = () => {
             </table>
           </div>
 
-          <button className="btn btn-success mt-3" onClick={handlePrint}>
+          <button className="btn btn-success mt-3" onClick={handleDownloadPDF}>
             Print Table (PDF)
           </button>
         </div>
